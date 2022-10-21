@@ -8,7 +8,7 @@ const Drinks = ({ selectedCocktail }) => {
   }
   console.log(glassName);
   const { isLoading, error, data:listDrinks } = useQuery(
-    ["repoData"],
+    ["repoDrinks"],
     () =>
       fetch(
         "https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=" + glassName
@@ -22,7 +22,7 @@ const Drinks = ({ selectedCocktail }) => {
 
   return listDrinks.drinks.map((drink) => (
     <Text key={drink.idDrink}>
-      {drink.strDrink} {console.log(listDrinks)}
+      {drink.strDrink}
     </Text>
   ));
 };
