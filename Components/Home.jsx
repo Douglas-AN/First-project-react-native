@@ -1,9 +1,9 @@
 import { Button, StyleSheet, Text, View } from 'react-native';
 
-function Home () {
+function Home() {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Home Screen</Text>
+            <Text>Home screen</Text>
         </View>
     )
 }

@@ -7,7 +7,6 @@ import Home from './Components/Home';
 import Setting from './Components/Setting';
 import { useQuery, useMutation, useQueryClient, QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
-
 export default function App() {
   const queryClient = new QueryClient()
   const Tab = createBottomTabNavigator();
