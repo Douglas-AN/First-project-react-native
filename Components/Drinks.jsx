@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 
 const Drinks = ({ selectedCocktail }) => {
   let glassName;
-  if (selectedCocktail != undefined) {
+  if (selectedCocktail !== "" || selectedCocktail !== undefined) {
     glassName = selectedCocktail.replace(" ", "_");
   }
   console.log(glassName);
@@ -13,7 +13,7 @@ const Drinks = ({ selectedCocktail }) => {
       fetch(
         "https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=" + glassName
       ).then((res) => res.json()),
-    { enable: glassName !== undefined }
+    { enable: glassName !== undefined || glassName !== ""}
   );
 
   if (isLoading) return <Text>Loading...</Text>;
