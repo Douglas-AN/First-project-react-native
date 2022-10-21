@@ -1,16 +1,20 @@
-import { StyleSheet, Text, View } from 'react-native';
-import { useQuery } from '@tanstack/react-query'
-import { Picker } from '@react-native-picker/picker';
+import { ScrollView,StyleSheet, Text, View } from 'react-native';
+import { useQuery } from '@tanstack/react-query';
 import React, { useState, useEffect } from 'react';
+import SelectGlass from './Glass';
+import Drinks from './Drinks';
 
 function Setting() {
 
+    //hook
     const { isLoading, error, data } = useQuery(['repoData'], () =>
-        fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=Cocktail_glass').then(res =>
+        fetch('https://www.thecocktaildb.com/api/json/v1/1/list.php?g=list').then(res =>
             res.json()
         )
     )
-
+    
+    const [selectedCocktail, setSelectedCocktail] = useState('');
+    //return
     if (isLoading) return (
         <Text>Loading...</Text>
     )
@@ -18,46 +22,13 @@ function Setting() {
     if (error) return (
         <Text>{'An error has occurred: ' + error.message}</Text>
     )
-    
-    const [selectedCocktail, setSelectedCocktail] = useState();
-
-    const SelectGlass = ({ selectedCocktail, setSelectedCocktail }) => {
-        return (
-            <View>
-                <Text style={styles.text}>Choisissez votre verre à cocktail :</Text>
-                <Picker
-                    value={selectedCocktail}
-                    onChange={(e) => setSelectedCocktail(e.target.value)}
-                >
-                    <Picker.Item value="" label='---'></Picker.Item>
-                    {
-                        data.drinks.map((drink) => (
-                            <Picker.Item key={drink.idDrink} label={drink.strDrink} value={drink.strDrink} />
-                        ))
-                    }
-                </Picker>
-            </View>
-        )
-    }
 
     return (
-        <Text
-            component={SelectGlass}
-            selectedCocktail={selectedCocktail}
-            setSelectedCocktail={setSelectedCocktail}
-        >
-        </Text>
+        <ScrollView>
+            <SelectGlass data={data} selectedCocktail={selectedCocktail} setSelectedCocktail={setSelectedCocktail}></SelectGlass>
+            <Drinks selectedCocktail={selectedCocktail}></Drinks>
+        </ScrollView>
     );
 }
-
-const styles = StyleSheet.create({
-    text: {
-        fontSize: 20,
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        marginTop: 50,
-    },
-});
-
 
 export default Setting 
