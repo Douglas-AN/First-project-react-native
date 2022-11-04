@@ -50,7 +50,6 @@ const Detail = () => {
           {key: dataCocktail.strIngredient13},
           {key: dataCocktail.strIngredient14},
           {key: dataCocktail.strIngredient15},
-          {key: dataCocktail.strIngredient16},
         ]}
         renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
       />
