@@ -13,7 +13,8 @@ function Setting() {
         )
     )
     
-    const [selectedCocktail, setSelectedCocktail] = useState('');
+    const [selectedGlass, setSelectedGlass] = useState('');
+    
     //return
     if (isLoading) return (
         <Text>Loading...</Text>
@@ -25,8 +26,8 @@ function Setting() {
 
     return (
         <ScrollView>
-            <SelectGlass data={data} selectedCocktail={selectedCocktail} setSelectedCocktail={setSelectedCocktail}></SelectGlass>
-            <Drinks selectedCocktail={selectedCocktail}></Drinks>
+            <SelectGlass data={data} selectedGlass={selectedGlass} setSelectedGlass={setSelectedGlass}></SelectGlass>
+            <Drinks selectedGlass={selectedGlass}></Drinks>
         </ScrollView>
     );
 }

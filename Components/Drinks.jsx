@@ -1,29 +1,35 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Alert, Button } from "react-native";
+import { Link } from '@react-navigation/native';
 import { useQuery } from "@tanstack/react-query";
 
-const Drinks = ({ selectedCocktail }) => {
+const Drinks = ({ selectedGlass }) => {
   let glassName;
-  if (selectedCocktail !== "" || selectedCocktail !== undefined) {
-    glassName = selectedCocktail.replace(" ", "_");
+  if (selectedGlass !== "") {
+    glassName = selectedGlass.replace(" ", "_");
   }
-  console.log(glassName);
-  const { isLoading, error, data:listDrinks } = useQuery(
-    ["repoDrinks"],
+  // console.log(glassName==="");
+  const {
+    isLoading,
+    error,
+    data: listDrinks,
+  } = useQuery(
+    ["repoDrinks", glassName],
     () =>
       fetch(
         "https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=" + glassName
       ).then((res) => res.json()),
-    { enable: glassName !== undefined || glassName !== ""}
+    { enabled: glassName !== "" }
   );
 
-  if (isLoading) return <Text>Loading...</Text>;
+  if (isLoading && glassName !== "") return <Text>Loading...</Text>;
 
   if (error) return <Text>{"An error has occurred: " + error}</Text>;
 
+  // console.log(listDrinks);
   return listDrinks.drinks.map((drink) => (
-    <Text key={drink.idDrink}>
+    <Link to={{ screen: "Detail", params: { id: drink.idDrink } }} >
       {drink.strDrink}
-    </Text>
+    </Link>
   ));
 };
 

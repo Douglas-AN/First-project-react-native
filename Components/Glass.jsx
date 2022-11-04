@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 
-const SelectGlass = ({ selectedCocktail, setSelectedCocktail, data }) => {
+const SelectGlass = ({ selectedGlass, setSelectedGlass, data }) => {
     return (
         <View>
             <Text style={styles.text}>Choisissez votre verre à cocktail :</Text>
             <Picker
-                selectedValue={selectedCocktail}
+                selectedValue={selectedGlass}
                 onValueChange={(itemValue, itemIndex) =>
-                    setSelectedCocktail(itemValue)
+                    setSelectedGlass(itemValue)
                 }
             >
                 <Picker.Item value="" label='---'></Picker.Item>
