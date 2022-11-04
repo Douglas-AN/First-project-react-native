@@ -24,10 +24,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.dougancelin.Reactnativeapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "966dbbb1-8e5f-41c3-849a-9841070b7c4d"
+      }
     }
   }
 }
