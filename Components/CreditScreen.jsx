@@ -10,12 +10,11 @@ export default function CreditScreen() {
 }
 
 const styles = StyleSheet.create({
-	container: {
-	  display: "flex",
-	  flex: 1,
-	  backgroundColor: "pink",
-	  alignItems: "center",
-	  justifyContent: "center",
-	},
-  });
-  
+  container: {
+    display: "flex",
+    flex: 1,
+    backgroundColor: "pink",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
