@@ -21,16 +21,18 @@ function Setting() {
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
     setSelectedGlass("");
+    refetch();
     setRefreshing(false);
   }, []);
   
   //hook
-  const { isLoading, error, data } = useQuery(["repoData"], () =>
+  const { isLoading, error, data, refetch } = useQuery(["repoData"], () =>
     fetch("https://www.thecocktaildb.com/api/json/v1/1/list.php?g=list").then(
       (res) => res.json()
     )
   );
 
+  //return
   //return
   if (isLoading) return <Text>Loading...</Text>;
 
@@ -57,12 +59,11 @@ function Setting() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1, 
+    backgroundColor: "pink",
+    color: "#fff",
   },
   scrollView: {
-    flex: 1,
-    color: "#fff",
-    backgroundColor: "pink",
     alignItems: "center",
     justifyContent: "center",
   },

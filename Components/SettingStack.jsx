@@ -5,7 +5,7 @@ import Detail from './Detail';
 const SettingStack = () => {
   const Stack = createStackNavigator();
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator screenOptions={{ headerShown: true }}>
       <Stack.Screen name="Setting" component={Setting}></Stack.Screen>
       <Stack.Screen name="Detail" component={Detail}></Stack.Screen>
     </Stack.Navigator>
