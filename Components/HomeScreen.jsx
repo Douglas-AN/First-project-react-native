@@ -9,9 +9,9 @@ import {
 import { useQuery } from "@tanstack/react-query";
 import React, { useState, useEffect } from "react";
 import SelectGlass from "./Glass";
-import Drinks from "./Drinks";
+import CocktailsList from "./CocktailsList";
 
-function Setting() {
+function HomeScreen() {
   const wait = (timeout) => {
     return new Promise((resolve) => setTimeout(resolve, timeout));
   };
@@ -24,7 +24,7 @@ function Setting() {
     refetch();
     setRefreshing(false);
   }, []);
-  
+
   //hook
   const { isLoading, error, data, refetch } = useQuery(["repoData"], () =>
     fetch("https://www.thecocktaildb.com/api/json/v1/1/list.php?g=list").then(
@@ -32,7 +32,6 @@ function Setting() {
     )
   );
 
-  //return
   //return
   if (isLoading) return <Text>Loading...</Text>;
 
@@ -51,7 +50,7 @@ function Setting() {
           selectedGlass={selectedGlass}
           setSelectedGlass={setSelectedGlass}
         ></SelectGlass>
-        <Drinks selectedGlass={selectedGlass}></Drinks>
+        <CocktailsList selectedGlass={selectedGlass}></CocktailsList>
       </ScrollView>
     </SafeAreaView>
   );
@@ -59,7 +58,7 @@ function Setting() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, 
+    flex: 1,
     backgroundColor: "pink",
     color: "#fff",
   },
@@ -69,4 +68,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Setting;
+export default HomeScreen;

@@ -2,7 +2,7 @@ import { useRoute } from "@react-navigation/native";
 import { ScrollView, Text, Image, StyleSheet, FlatList } from "react-native";
 import { useQuery } from "@tanstack/react-query";
 
-const Detail = () => {
+const CocktailsDetails = () => {
   const route = useRoute();
   console.log(route.params.id);
   const {
@@ -68,4 +68,4 @@ const styles = StyleSheet.create({
   }, 
 });
 
-export default Detail;
+export default CocktailsDetails;

@@ -1,11 +1,9 @@
 import * as React from 'react';
-import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet} from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Home from './Components/Home';
-import SettingStack from './Components/SettingStack';
-import { useQuery, useMutation, useQueryClient, QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import AppTabs from './Components/AppTab';
 
 
 export default function App() {
@@ -15,12 +13,7 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <NavigationContainer>
-        {
-          <Tab.Navigator>
-            <Tab.Screen name="Home" component={Home}></Tab.Screen>
-            <Tab.Screen name="Setting" component={SettingStack}></Tab.Screen>
-          </Tab.Navigator>
-        }
+        <AppTabs />       
       </NavigationContainer>
     </QueryClientProvider>
   );
