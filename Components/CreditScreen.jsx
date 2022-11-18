@@ -1,9 +1,21 @@
-import { Text } from "react-native"
+import { Text, View } from "react-native";
+import { StyleSheet } from "react-native";
 
-function CreditScreen() {
-    return (
-		<Text style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>CreditScreen</Text>
-	)
+export default function CreditScreen() {
+  return (
+    <View style={styles.container}>
+      <Text>Crédit</Text>
+    </View>
+  );
 }
 
-export default CreditScreen;
+const styles = StyleSheet.create({
+	container: {
+	  display: "flex",
+	  flex: 1,
+	  backgroundColor: "pink",
+	  alignItems: "center",
+	  justifyContent: "center",
+	},
+  });
+  

@@ -2,7 +2,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./HomeScreen";
 import CocktailsDetails from "./CocktailsDetails";
 
-function HomeStack() {
+export default function HomeStack() {
   const Stack = createNativeStackNavigator();
 
   return (
@@ -12,7 +12,7 @@ function HomeStack() {
         component={HomeScreen}
         options={{ headerShown: false }}
       />
-      <Stack.Screen
+      <Stack.Screen 
         name="CocktailsDetails"
         component={CocktailsDetails}
         options={{
@@ -22,5 +22,3 @@ function HomeStack() {
     </Stack.Navigator>
   );
 }
-
-export default HomeStack;

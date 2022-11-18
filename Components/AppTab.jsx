@@ -1,5 +1,4 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { StyleSheet} from 'react-native';
 import HomeStack from "./HomeStack";
 import CreditScreen from "./CreditScreen";
 
@@ -21,8 +20,7 @@ export default function AppTabs() {
           title: "Accueil",
         }}
       />
-      <Tab.Screen 
-        style={styles.container}
+      <Tab.Screen
         name="CreditScreen"
         component={CreditScreen}
         options={{
@@ -32,13 +30,3 @@ export default function AppTabs() {
     </Tab.Navigator>
   );
 }
-
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-  });
-  
