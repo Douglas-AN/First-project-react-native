@@ -7,7 +7,7 @@ const CocktailsList = ({ selectedGlass }) => {
   if (selectedGlass !== "") {
     glassName = selectedGlass.replace(" ", "_");
   }
-  console.log(selectedGlass);
+  
   const {
     isLoading,
     error,
@@ -21,7 +21,7 @@ const CocktailsList = ({ selectedGlass }) => {
       ).then((res) => res.json()),
     { enabled: !!selectedGlass}
   );
-  
+
   if (isLoading && glassName !== "") return <Text>Loading...</Text>;
 
   if (error) return <Text>{"An error has occurred: " + error}</Text>;
