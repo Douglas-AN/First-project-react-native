@@ -1,13 +1,14 @@
-import { StyleSheet, Text, View, Alert, Button } from "react-native";
-import { Link } from '@react-navigation/native';
+import { StyleSheet, Text, View, Alert, Button, Image } from "react-native";
+import { Link } from "@react-navigation/native";
 import { useQuery } from "@tanstack/react-query";
+import theme from "../Styles/Theme.Jsx";
 
 const CocktailsList = ({ selectedGlass }) => {
   let glassName;
   if (selectedGlass !== "") {
     glassName = selectedGlass.replace(" ", "_");
   }
-  
+
   const {
     isLoading,
     error,
@@ -19,7 +20,7 @@ const CocktailsList = ({ selectedGlass }) => {
       fetch(
         "https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=" + glassName
       ).then((res) => res.json()),
-    { enabled: !!selectedGlass}
+    { enabled: !!selectedGlass }
   );
 
   if (isLoading && glassName !== "") return <Text>Loading...</Text>;
@@ -27,10 +28,49 @@ const CocktailsList = ({ selectedGlass }) => {
   if (error) return <Text>{"An error has occurred: " + error}</Text>;
 
   return listDrinks.drinks.map((drink) => (
-    <Link to={{ screen: "CocktailsDetails", params: { id: drink.idDrink } }} >
-      {drink.strDrink}
-    </Link>
+    <View style={styles.linkWrapper}>
+      <Link
+        style={styles.link}
+        to={{ screen: "CocktailsDetails", params: { id: drink.idDrink } }}
+      >
+        <Image
+          style={styles.img}
+          source={{
+            uri: drink.strDrinkThumb,
+          }}
+        />
+        <View style={styles.textWrapper}>
+          <Text style={styles.text}>{drink.strDrink}</Text>
+        </View>
+      </Link>
+    </View>
   ));
 };
+
+const styles = StyleSheet.create({
+  textDesc:{
+    marginBottom: theme.spacing.baseXl,
+    fontSize: theme.fontSize.md,
+  },
+  linkWrapper: {
+    alignSelf: "stretch",
+    borderBottomColor: "#D8D8DA",
+    borderBottomWidth: 1,
+    paddingTop: theme.spacing.base,
+  },
+  link: {
+    paddingBottom: theme.spacing.base,
+    display: 'flex',
+    alignItems: "baseline",
+  },
+  img: {
+    width: 45,
+    height: 45,
+    borderRadius: theme.radius.base,
+  },
+  text:{
+    marginLeft: theme.spacing.base,
+  }
+});
 
 export default CocktailsList;

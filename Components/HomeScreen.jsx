@@ -5,11 +5,13 @@ import {
   SafeAreaView,
   Text,
   View,
+  Dimensions,
 } from "react-native";
 import { useQuery } from "@tanstack/react-query";
 import React, { useState, useEffect } from "react";
 import SelectGlass from "./Glass";
 import CocktailsList from "./CocktailsList";
+import theme from "../Styles/Theme.Jsx";
 
 function HomeScreen() {
   const wait = (timeout) => {
@@ -39,7 +41,7 @@ function HomeScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView
+      <ScrollView 
         contentContainerStyle={styles.scrollView}
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
@@ -50,22 +52,31 @@ function HomeScreen() {
           selectedGlass={selectedGlass}
           setSelectedGlass={setSelectedGlass}
         ></SelectGlass>
-        <CocktailsList selectedGlass={selectedGlass}></CocktailsList>
+        <View style={styles.cocktailListWrapper}>
+          <Text style={styles.textDesc}>Liste des cocktail</Text>
+          <CocktailsList style={styles.list} selectedGlass={selectedGlass}></CocktailsList>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
 }
-
+const windowHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "pink",
-    color: "#fff",
+    backgroundColor: theme.colors.primary,
+    zIndex: 2,
   },
-  scrollView: {
-    alignItems: "center",
-    justifyContent: "center",
+  cocktailListWrapper:{
+    alignSelf: "stretch",
+    backgroundColor: theme.colors.white,
+    padding: theme.spacing.baseXl,
+    minHeight: windowHeight,
   },
+  textDesc:{
+    marginBottom: theme.spacing.baseXl,
+    fontSize: theme.fontSize.md,
+  }
 });
 
 export default HomeScreen;
