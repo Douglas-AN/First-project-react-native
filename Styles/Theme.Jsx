@@ -1,7 +1,7 @@
 const theme = {
   colors: {
     transparent: "transparent",
-    white: "#FEFDF8",
+    white: "#FFF",
     whiteTransparent: "#FFFFFFCC",
     black: "#000000",
     primary: "#FFB812",
@@ -13,6 +13,7 @@ const theme = {
     gray2: "#414141",
     gray3: "#D8D8DA",
     light: "#FEFDF8",
+    shadow: "#171717",
   },
   spacing: {
     quarterSm: 2,

@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { useQuery } from "@tanstack/react-query";
 import theme from "../Styles/Theme.Jsx";
+import componnent from "../Styles/Componnent";
 
 const CocktailsDetails = () => {
   const route = useRoute();
@@ -228,7 +229,7 @@ const styles = StyleSheet.create({
   },
   titleIngredient: {
     fontSize: theme.fontSize.lg,
-    marginBottom: 10,
+    marginBottom: theme.spacing.demiLG,
     color: theme.colors.secondary2,
   },
   listWrapper: {

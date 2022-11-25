@@ -12,6 +12,7 @@ import React, { useState, useEffect } from "react";
 import SelectGlass from "./Glass";
 import CocktailsList from "./CocktailsList";
 import theme from "../Styles/Theme.Jsx";
+import componnent from "../Styles/Componnent";
 
 function HomeScreen() {
   const wait = (timeout) => {
@@ -41,7 +42,7 @@ function HomeScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView 
+      <ScrollView
         contentContainerStyle={styles.scrollView}
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
@@ -52,31 +53,35 @@ function HomeScreen() {
           selectedGlass={selectedGlass}
           setSelectedGlass={setSelectedGlass}
         ></SelectGlass>
+        <View style={componnent.titleWrapper}>
+          <Text style={componnent.titleItem}>Liste des cocktail</Text>
+        </View>
         <View style={styles.cocktailListWrapper}>
-          <Text style={styles.textDesc}>Liste des cocktail</Text>
-          <CocktailsList style={styles.list} selectedGlass={selectedGlass}></CocktailsList>
+          <CocktailsList
+            style={styles.list}
+            selectedGlass={selectedGlass}
+          ></CocktailsList>
         </View>
       </ScrollView>
     </SafeAreaView>
   );
 }
-const windowHeight = Dimensions.get('window').height;
+const windowHeight = Dimensions.get("window").height;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: theme.colors.primary,
-    zIndex: 2,
   },
-  cocktailListWrapper:{
+  cocktailListWrapper: {
     alignSelf: "stretch",
     backgroundColor: theme.colors.white,
     padding: theme.spacing.baseXl,
     minHeight: windowHeight,
   },
-  textDesc:{
-    marginBottom: theme.spacing.baseXl,
-    fontSize: theme.fontSize.md,
-  }
+  // textDesc: {
+  //   marginBottom: theme.spacing.baseXl,
+  //   fontSize: theme.fontSize.md,
+  // },
 });
 
 export default HomeScreen;

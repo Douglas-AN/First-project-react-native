@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Alert, Button, Image } from "react-native";
 import { Link } from "@react-navigation/native";
 import { useQuery } from "@tanstack/react-query";
 import theme from "../Styles/Theme.Jsx";
+import componnent from "../Styles/Componnent";
 
 const CocktailsList = ({ selectedGlass }) => {
   let glassName;
@@ -28,9 +29,9 @@ const CocktailsList = ({ selectedGlass }) => {
   if (error) return <Text>{"An error has occurred: " + error}</Text>;
 
   return listDrinks.drinks.map((drink) => (
-    <View style={styles.linkWrapper}>
+    <View style={componnent.listeWrapper}>
       <Link
-        style={styles.link}
+        style={componnent.titleItem}
         to={{ screen: "CocktailsDetails", params: { id: drink.idDrink } }}
       >
         <Image
@@ -51,17 +52,6 @@ const styles = StyleSheet.create({
   textDesc:{
     marginBottom: theme.spacing.baseXl,
     fontSize: theme.fontSize.md,
-  },
-  linkWrapper: {
-    alignSelf: "stretch",
-    borderBottomColor: "#D8D8DA",
-    borderBottomWidth: 1,
-    paddingTop: theme.spacing.base,
-  },
-  link: {
-    paddingBottom: theme.spacing.base,
-    display: 'flex',
-    alignItems: "baseline",
   },
   img: {
     width: 45,
