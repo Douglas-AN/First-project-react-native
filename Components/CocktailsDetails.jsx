@@ -11,6 +11,7 @@ import {
 import { useQuery } from "@tanstack/react-query";
 import theme from "../Styles/Theme.Jsx";
 import componnent from "../Styles/Componnent";
+import { Component } from "react";
 
 const CocktailsDetails = () => {
   const route = useRoute();
@@ -63,10 +64,10 @@ const CocktailsDetails = () => {
           </View>
         </View>
         <View style={styles.ingredientWrapper}>
-          <View style={styles.titleListWrapper}>
-            <Text style={styles.titleIngredient}>Ingrédients</Text>
+          <View style={componnent.titleWrapper}>
+            <Text style={componnent.titleItem}>Ingrédients</Text>
           </View>
-          <View style={styles.listWrapper}>
+          <View style={[styles.listWrapper, componnent.container]}>
             <FlatList
               data={[
                 {
@@ -132,8 +133,8 @@ const CocktailsDetails = () => {
               ]}
               renderItem={({ item, index }) =>
                 item.key && item.mesure !== null ? (
-                  <View style={styles.listItemWrapper}>
-                    <Text style={styles.listItem}>
+                  <View style={componnent.listeWrapper}>
+                    <Text style={componnent.listeItem}>
                       {item.mesure + " " + item.key}
                     </Text>
                   </View>
@@ -144,8 +145,8 @@ const CocktailsDetails = () => {
             />
           </View>
         </View>
-        <View style={styles.titleListWrapper}>
-          <Text style={styles.titleIngredient}>Instructions</Text>
+        <View style={componnent.titleWrapper}>
+          <Text style={componnent.titleItem}>Instructions</Text>
         </View>
         <View style={styles.descWrapper}>
           <Text style={styles.desc}>{dataCocktail.strInstructions}</Text>
@@ -158,7 +159,7 @@ const windowWidth = Dimensions.get("window").whidth;
 const windowHeight = Dimensions.get("window").height;
 const styles = StyleSheet.create({
   vignette: {
-    backgroundColor: "#f6f2e9",
+    backgroundColor: theme.colors.secondary4,
     height: windowHeight - 600,
     display: "flex",
     justifyContent: "flex-end",
@@ -172,7 +173,7 @@ const styles = StyleSheet.create({
     marginBottom: theme.spacing.base,
     fontSize: theme.fontSize.lg2,
     fontWeight: theme.fontWeight.bold,
-    color: "#333",
+    color: theme.colors.black,
     textAlign: "center",
   },
   glassName: {
@@ -194,7 +195,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     borderBottomColor: theme.colors.primary,
     borderBottomWidth: 3,
-    // paddingBottom: theme.spacing.base,
     marginBottom: theme.spacing.baseLg,
     padding: theme.spacing.baseXl,
   },
@@ -215,38 +215,8 @@ const styles = StyleSheet.create({
     paddingTop: theme.spacing.demi,
     paddingBottom: theme.spacing.demi,
   },
-  titleListWrapper: {
-    backgroundColor: "white",
-    width: windowWidth,
-    shadowOffset: { width: -2, height: 4 },
-    shadowColor: "#171717",
-    shadowOpacity: 0.1,
-    paddingLeft: theme.spacing.baseXl,
-    paddingRight: theme.spacing.baseXl,
-    paddingTop: theme.spacing.demi,
-    paddingBottom: theme.spacing.demi,
-    marginBottom: theme.spacing.baseXl,
-  },
-  titleIngredient: {
-    fontSize: theme.fontSize.lg,
-    marginBottom: theme.spacing.demiLG,
-    color: theme.colors.secondary2,
-  },
   listWrapper: {
-    paddingLeft: theme.spacing.baseXl,
-    paddingRight: theme.spacing.baseXl,
     marginBottom: theme.spacing.double,
-  },
-  listItemWrapper: {
-    alignSelf: "stretch",
-    borderBottomColor: "#D8D8DA",
-    borderBottomWidth: 1,
-    paddingTop: theme.spacing.base,
-  },
-  listItem: {
-    paddingBottom: theme.spacing.base,
-    display: "flex",
-    alignItems: "baseline",
   },
   descWrapper: {
     paddingLeft: theme.spacing.baseXl,

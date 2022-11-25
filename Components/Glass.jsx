@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     fontSize: theme.fontSize.xl2,
     marginTop: theme.spacing.triple,
     color: theme.colors.white,
-    fontFamily: theme.fontFamily.poppins400,
+    // fontFamily: theme.fontFamily.poppins400,
     textAlign: "left",
     marginLeft: theme.spacing.baseXl,
     maxWidth: 350,

@@ -40,7 +40,7 @@ const CocktailsList = ({ selectedGlass }) => {
             uri: drink.strDrinkThumb,
           }}
         />
-        <View style={styles.textWrapper}>
+        <View>
           <Text style={styles.text}>{drink.strDrink}</Text>
         </View>
       </Link>
@@ -49,10 +49,6 @@ const CocktailsList = ({ selectedGlass }) => {
 };
 
 const styles = StyleSheet.create({
-  textDesc:{
-    marginBottom: theme.spacing.baseXl,
-    fontSize: theme.fontSize.md,
-  },
   img: {
     width: 45,
     height: 45,

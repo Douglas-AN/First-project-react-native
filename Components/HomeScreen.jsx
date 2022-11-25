@@ -53,14 +53,13 @@ function HomeScreen() {
           selectedGlass={selectedGlass}
           setSelectedGlass={setSelectedGlass}
         ></SelectGlass>
-        <View style={componnent.titleWrapper}>
-          <Text style={componnent.titleItem}>Liste des cocktail</Text>
-        </View>
         <View style={styles.cocktailListWrapper}>
-          <CocktailsList
-            style={styles.list}
-            selectedGlass={selectedGlass}
-          ></CocktailsList>
+          <View style={componnent.titleWrapper}>
+            <Text style={componnent.titleItem}>Liste des cocktail</Text>
+          </View>
+          <View style={componnent.container}>
+            <CocktailsList selectedGlass={selectedGlass}></CocktailsList>
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -71,17 +70,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: theme.colors.primary,
+    zIndex: 2,
   },
   cocktailListWrapper: {
     alignSelf: "stretch",
     backgroundColor: theme.colors.white,
-    padding: theme.spacing.baseXl,
     minHeight: windowHeight,
   },
-  // textDesc: {
-  //   marginBottom: theme.spacing.baseXl,
-  //   fontSize: theme.fontSize.md,
-  // },
 });
 
 export default HomeScreen;
