@@ -31,7 +31,7 @@ const CocktailsList = ({ selectedGlass }) => {
   return listDrinks.drinks.map((drink) => (
     <View style={componnent.listeWrapper}>
       <Link
-        style={componnent.titleItem}
+        style={[componnent.titleItem]}
         to={{ screen: "CocktailsDetails", params: { id: drink.idDrink } }}
       >
         <Image
@@ -40,7 +40,7 @@ const CocktailsList = ({ selectedGlass }) => {
             uri: drink.strDrinkThumb,
           }}
         />
-        <View>
+        <View style={styles.textWrapper}>
           <Text style={styles.text}>{drink.strDrink}</Text>
         </View>
       </Link>
@@ -56,6 +56,10 @@ const styles = StyleSheet.create({
   },
   text:{
     marginLeft: theme.spacing.base,
+  },
+  textWrapper:{
+    flex: 1,
+    justifyContent: 'center',
   }
 });
 

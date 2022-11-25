@@ -32,6 +32,8 @@ const CocktailsDetails = () => {
   return listData.drinks.map((dataCocktail) => (
     <ScrollView>
       <View style={styles.vignette}>
+        <Image style={styles.imageVignette1} source={require("./img/flower.png")} />
+        <Image style={styles.imageVignette2} source={require("./img/flower.png")} />
         <View style={styles.titleWrapper}>
           <Text style={styles.cocktailName}>{dataCocktail.strDrink}</Text>
           <Text style={styles.glassName}>{dataCocktail.strGlass}</Text>
@@ -163,6 +165,22 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "flex-end",
     alignItems: "center",
+  },
+  imageVignette1:{
+    height: 250,
+    width: 250,
+    position: "absolute",
+    top: -50,
+    right: -50,
+    opacity: theme.opacity.pressed,
+  },
+  imageVignette2:{
+    height: 200,
+    width: 200,
+    position: "absolute",
+    top: 150,
+    left: -50,
+    opacity: theme.opacity.pressed,
   },
   titleWrapper: {
     position: "absolute",

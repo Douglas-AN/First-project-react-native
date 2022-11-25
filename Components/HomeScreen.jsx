@@ -6,6 +6,7 @@ import {
   Text,
   View,
   Dimensions,
+  Image,
 } from "react-native";
 import { useQuery } from "@tanstack/react-query";
 import React, { useState, useEffect } from "react";
@@ -43,6 +44,7 @@ function HomeScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
+      <Image style={styles.image} source={require("./img/flower.png")} />
       <ScrollView
         contentContainerStyle={styles.scrollView}
         refreshControl={
@@ -68,6 +70,14 @@ function HomeScreen() {
 }
 const windowHeight = Dimensions.get("window").height;
 const styles = StyleSheet.create({
+  image:{
+    width: 250,
+    height: 250,
+    position: "absolute",
+    top: -50,
+    right: -50,
+    opacity: theme.opacity.pressed,
+  },
   container: {
     flex: 1,
     backgroundColor: theme.colors.primary,
