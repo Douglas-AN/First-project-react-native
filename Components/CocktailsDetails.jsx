@@ -10,8 +10,7 @@ import {
 } from "react-native";
 import { useQuery } from "@tanstack/react-query";
 import theme from "../Styles/Theme.Jsx";
-import componnent from "../Styles/Componnent";
-import { Component } from "react";
+import componnent from "../Styles/Componnent.Jsx";
 
 const CocktailsDetails = () => {
   const route = useRoute();
@@ -186,7 +185,7 @@ const styles = StyleSheet.create({
     height: 200,
   },
   detailsWrapper: {
-    backgroundColor: "#fff",
+    backgroundColor: theme.colors.white,
     minHeight: windowHeight,
   },
   info: {

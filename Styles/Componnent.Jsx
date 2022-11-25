@@ -12,8 +12,8 @@ const componnent = {
     paddingLeft: theme.spacing.baseXl,
     paddingRight: theme.spacing.baseXl,
     paddingTop: theme.spacing.demi,
-    paddingBottom: theme.spacing.demi,
-    marginBottom: theme.spacing.baseXl,
+    // paddingBottom: theme.spacing.demi,
+    // marginBottom: theme.spacing.baseXl,
   },
   titleItem:{
     fontSize: theme.fontSize.lg,

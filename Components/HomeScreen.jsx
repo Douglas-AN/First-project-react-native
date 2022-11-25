@@ -11,8 +11,9 @@ import { useQuery } from "@tanstack/react-query";
 import React, { useState, useEffect } from "react";
 import SelectGlass from "./Glass";
 import CocktailsList from "./CocktailsList";
+import componnent from "../Styles/Componnent.Jsx";
 import theme from "../Styles/Theme.Jsx";
-import componnent from "../Styles/Componnent";
+
 
 function HomeScreen() {
   const wait = (timeout) => {

@@ -8,7 +8,7 @@ const theme = {
     secondary1: "#FFBE5C",
     secondary2: "#FF9113",
     secondary3: "#0A67AD",
-    secondary4: "#f6f2e9",
+    secondary4: "#F6F2E9",
     gray1: "#6F6F6F",
     gray2: "#414141",
     gray3: "#D8D8DA",
