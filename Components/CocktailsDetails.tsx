@@ -32,7 +32,7 @@ const CocktailsDetails = () => {
     return <Text>{"An error has occurred: " + getErrorMessage(error)}</Text>;
 
   return listData.drinks.map((dataCocktail) => (
-    <ScrollView>
+    <ScrollView key={dataCocktail.idDrink}>
       <View style={styles.vignette}>
         <Image
           style={styles.imageVignette1}

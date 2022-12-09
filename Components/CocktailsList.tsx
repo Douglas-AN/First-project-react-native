@@ -29,7 +29,7 @@ const CocktailsList = ({ selectedGlass }) => {
   if (error) return <Text>{"An error has occurred: " + error}</Text>;
 
   return listDrinks.drinks.map((drink) => (
-    <View style={componnent.listeWrapper}>
+    <View style={componnent.listeWrapper} key={drink.idDrink}>
       <Link
         style={[componnent.titleItem]}
         to={{ screen: "CocktailsDetails", params: { id: drink.idDrink } }}
