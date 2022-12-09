@@ -12,14 +12,14 @@ import { useQuery } from "@tanstack/react-query";
 import React, { useState, useEffect } from "react";
 import SelectGlass from "./Glass";
 import CocktailsList from "./CocktailsList";
-import componnent from "../Styles/Componnent.Jsx";
-import theme from "../Styles/Theme.Jsx";
+import componnent from "../Styles/Componnent.jsx";
+import theme from "../Styles/Theme";
 
 
 function HomeScreen() {
-  const wait = (timeout) => {
-    return new Promise((resolve) => setTimeout(resolve, timeout));
-  };
+  // const wait = (timeout) => {
+  //   return new Promise((resolve) => setTimeout(resolve, timeout));
+  // };
   const [refreshing, setRefreshing] = React.useState(false);
   const [selectedGlass, setSelectedGlass] = useState("");
 

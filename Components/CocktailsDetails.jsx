@@ -9,8 +9,8 @@ import {
   Dimensions,
 } from "react-native";
 import { useQuery } from "@tanstack/react-query";
-import theme from "../Styles/Theme.Jsx";
-import componnent from "../Styles/Componnent.Jsx";
+import theme from "../Styles/Theme";
+import componnent from "../Styles/Componnent.jsx";
 
 const CocktailsDetails = () => {
   const route = useRoute();

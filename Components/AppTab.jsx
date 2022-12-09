@@ -3,7 +3,7 @@ import HomeStack from "./HomeStack";
 import CreditScreen from "./CreditScreen";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import theme from "../Styles/Theme.Jsx";
+import theme from "../Styles/Theme";
 
 const Tab = createMaterialBottomTabNavigator();
 //const Tab = createBottomTabNavigator();

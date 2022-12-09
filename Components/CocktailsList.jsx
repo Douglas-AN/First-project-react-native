@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View, Alert, Button, Image } from "react-native";
 import { Link } from "@react-navigation/native";
 import { useQuery } from "@tanstack/react-query";
-import theme from "../Styles/Theme.Jsx";
-import componnent from "../Styles/Componnent.Jsx";
+import theme from "../Styles/Theme";
+import componnent from "../Styles/Componnent";
 
 const CocktailsList = ({ selectedGlass }) => {
   let glassName;

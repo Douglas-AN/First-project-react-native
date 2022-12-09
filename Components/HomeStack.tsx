@@ -3,7 +3,7 @@ import HomeScreen from "./HomeScreen";
 import CocktailsDetails from "./CocktailsDetails";
 
 export default function HomeStack() {
-  const Stack = createNativeStackNavigator();
+  const Stack: any = createNativeStackNavigator();
 
   return (
     <Stack.Navigator>
@@ -12,7 +12,7 @@ export default function HomeStack() {
         component={HomeScreen}
         options={{ headerShown: false }}
       />
-      <Stack.Screen 
+      <Stack.Screen
         name="CocktailsDetails"
         component={CocktailsDetails}
         options={{

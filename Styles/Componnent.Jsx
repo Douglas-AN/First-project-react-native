@@ -1,4 +1,4 @@
-import theme from "./Theme.Jsx";
+import theme from "./Theme";
 import { Dimensions } from "react-native";
 
 const windowWidth = Dimensions.get("window").whidth;
@@ -12,8 +12,6 @@ const componnent = {
     paddingLeft: theme.spacing.baseXl,
     paddingRight: theme.spacing.baseXl,
     paddingTop: theme.spacing.demi,
-    // paddingBottom: theme.spacing.demi,
-    // marginBottom: theme.spacing.baseXl,
   },
   titleItem:{
     fontSize: theme.fontSize.lg,

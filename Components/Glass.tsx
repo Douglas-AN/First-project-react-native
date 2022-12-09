@@ -1,8 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 import { Picker } from "@react-native-picker/picker";
-import theme from "../Styles/Theme.Jsx";
+import theme from "../Styles/Theme";
 
-const SelectGlass = ({ selectedGlass, setSelectedGlass, data }) => {
+interface infoGlassSelected{
+  selectedGlass: string,
+  setSelectedGlass : any,
+  data: any,
+}
+
+const SelectGlass = ({ selectedGlass, setSelectedGlass, data }:infoGlassSelected) => {
   return (
     <View>
       <Text style={styles.text}>Choisissez votre verre à cocktail ...</Text>
