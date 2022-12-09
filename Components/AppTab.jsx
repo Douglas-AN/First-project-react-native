@@ -1,8 +1,8 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeStack from "./HomeStack";
 import CreditScreen from "./CreditScreen";
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import theme from "../Styles/Theme.Jsx";
 
 const Tab = createMaterialBottomTabNavigator();
@@ -14,7 +14,7 @@ export default function AppTabs() {
   return (
     <Tab.Navigator
       initialRouteName="HomeStack"
-      activeColor= {theme.colors.primary}
+      activeColor={theme.colors.primary}
       barStyle={{ backgroundColor: theme.colors.secondary4 }}
       screenOptions={{
         headerShown: false,
@@ -25,7 +25,7 @@ export default function AppTabs() {
         component={HomeStack}
         options={{
           title: "Accueil",
-          tabBarLabel: 'Home',
+          tabBarLabel: "Home",
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="home" color={color} size={26} />
           ),
@@ -36,7 +36,7 @@ export default function AppTabs() {
         component={CreditScreen}
         options={{
           title: "Crédit",
-          tabBarLabel: 'CreditScreen',
+          tabBarLabel: "CreditScreen",
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="account" color={color} size={26} />
           ),

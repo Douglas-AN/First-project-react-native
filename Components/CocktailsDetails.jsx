@@ -32,8 +32,14 @@ const CocktailsDetails = () => {
   return listData.drinks.map((dataCocktail) => (
     <ScrollView>
       <View style={styles.vignette}>
-        <Image style={styles.imageVignette1} source={require("./img/flower.png")} />
-        <Image style={styles.imageVignette2} source={require("./img/flower.png")} />
+        <Image
+          style={styles.imageVignette1}
+          source={require("./img/flower.png")}
+        />
+        <Image
+          style={styles.imageVignette2}
+          source={require("./img/flower.png")}
+        />
         <View style={styles.titleWrapper}>
           <Text style={styles.cocktailName}>{dataCocktail.strDrink}</Text>
           <Text style={styles.glassName}>{dataCocktail.strGlass}</Text>
@@ -156,7 +162,7 @@ const CocktailsDetails = () => {
     </ScrollView>
   ));
 };
-const windowWidth = Dimensions.get("window").whidth;
+
 const windowHeight = Dimensions.get("window").height;
 const styles = StyleSheet.create({
   vignette: {
@@ -166,7 +172,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     alignItems: "center",
   },
-  imageVignette1:{
+  imageVignette1: {
     height: 250,
     width: 250,
     position: "absolute",
@@ -174,7 +180,7 @@ const styles = StyleSheet.create({
     right: -50,
     opacity: theme.opacity.pressed,
   },
-  imageVignette2:{
+  imageVignette2: {
     height: 200,
     width: 200,
     position: "absolute",
@@ -239,6 +245,7 @@ const styles = StyleSheet.create({
     paddingTop: theme.spacing.base,
     paddingLeft: theme.spacing.baseXl,
     paddingRight: theme.spacing.baseXl,
+    paddingBottom: theme.spacing.base,
   },
   desc: {
     fontSize: theme.fontSize.md,
