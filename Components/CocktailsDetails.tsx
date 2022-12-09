@@ -35,11 +35,11 @@ const CocktailsDetails = () => {
       <View style={styles.vignette}>
         <Image
           style={styles.imageVignette1}
-          source={require('./img/flower.png')}
+          source={require('../img/flower.png')}
         />
         <Image
           style={styles.imageVignette2}
-          source={require('./img/flower.png')}
+          source={require('../img/flower.png')}
         />
         <View style={styles.titleWrapper}>
           <Text style={styles.cocktailName}>{dataCocktail.strDrink}</Text>
@@ -55,19 +55,19 @@ const CocktailsDetails = () => {
       <View style={styles.detailsWrapper}>
         <View style={styles.info}>
           <View style={styles.iconWrapper}>
-            <Image style={styles.icon} source={require('./img/like.png')} />
+            <Image style={styles.icon} source={require('../img/like.png')} />
             <Text style={styles.textIcon}>Mes envies</Text>
           </View>
           <View style={styles.iconWrapper}>
-            <Image style={styles.icon} source={require('./img/add.png')} />
+            <Image style={styles.icon} source={require('../img/add.png')} />
             <Text style={styles.textIcon}>Mon bar</Text>
           </View>
           <View style={styles.iconWrapper}>
-            <Image style={styles.icon} source={require('./img/cart.png')} />
+            <Image style={styles.icon} source={require('../img/cart.png')} />
             <Text style={styles.textIcon}>Acheter</Text>
           </View>
           <View style={styles.iconWrapper}>
-            <Image style={styles.icon} source={require('./img/star.png')} />
+            <Image style={styles.icon} source={require('../img/star.png')} />
             <Text style={styles.textIcon}>Noter</Text>
           </View>
         </View>

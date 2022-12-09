@@ -44,7 +44,7 @@ function HomeScreen () {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Image style={styles.image} source={require('./img/flower.png')} />
+      <Image style={styles.image} source={require('../img/flower.png')} />
       <ScrollView
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
