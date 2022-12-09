@@ -236,6 +236,7 @@ const styles = StyleSheet.create({
     marginBottom: theme.spacing.double,
   },
   descWrapper: {
+    paddingTop: theme.spacing.base,
     paddingLeft: theme.spacing.baseXl,
     paddingRight: theme.spacing.baseXl,
   },
