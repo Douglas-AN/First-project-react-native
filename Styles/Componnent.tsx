@@ -1,8 +1,8 @@
 import theme from "./Theme";
 import { Dimensions } from "react-native";
 
-const windowWidth = Dimensions.get("window").whidth;
-const componnent = {
+const windowWidth = Dimensions.get("window").width;
+const componnent:any = {
   titleWrapper: {
     backgroundColor: theme.colors.white,
     width: windowWidth,
