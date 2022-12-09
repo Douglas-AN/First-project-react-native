@@ -54,13 +54,13 @@ const styles = StyleSheet.create({
     height: 45,
     borderRadius: theme.radius.base,
   },
-  text:{
+  text: {
     marginLeft: theme.spacing.base,
   },
-  textWrapper:{
+  textWrapper: {
     flex: 1,
-    justifyContent: 'center',
-  }
+    justifyContent: "center",
+  },
 });
 
 export default CocktailsList;

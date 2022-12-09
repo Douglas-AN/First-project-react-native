@@ -1,13 +1,13 @@
-import HomeStack from './HomeStack'
-import CreditScreen from './CreditScreen'
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
-import theme from '../Styles/Theme'
+import HomeStack from "./HomeStack";
+import CreditScreen from "./CreditScreen";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import theme from "../Styles/Theme";
 
-const Tab = createMaterialBottomTabNavigator()
+const Tab = createMaterialBottomTabNavigator();
 // const Tab = createBottomTabNavigator();
 
-export default function AppTabs () {
+export default function AppTabs() {
   // const insets = useSafeAreaInsets()
 
   return (
@@ -20,24 +20,24 @@ export default function AppTabs () {
         name="HomeStack"
         component={HomeStack}
         options={{
-          title: 'Accueil',
-          tabBarLabel: 'Home',
+          title: "Accueil",
+          tabBarLabel: "Home",
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="home" color={color} size={26} />
-          )
+          ),
         }}
       />
       <Tab.Screen
         name="CreditScreen"
         component={CreditScreen}
         options={{
-          title: 'Crédit',
-          tabBarLabel: 'CreditScreen',
+          title: "Crédit",
+          tabBarLabel: "CreditScreen",
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="account" color={color} size={26} />
-          )
+          ),
         }}
       />
     </Tab.Navigator>
-  )
+  );
 }
